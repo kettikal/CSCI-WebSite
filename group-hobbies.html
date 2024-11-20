@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Sources and Hobbies</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link type="text/css" rel="stylesheet" href="selector-recom.css">
+    <style>
+        body, h1, h2, h3, h4, h5 {
+            font-family: "Raleway", sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .dark-mode {
+            background-color: black;
+            color: beige;
+        }
+        .hobby-input {
+            width: 80%;
+            padding: 12px;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .button {
+            padding: 12px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: lightskyblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .result-message p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body class="w3-gainsboro">
+    <div class="w3-content" style="max-width:1400px">
+
+        <!-- Header -->
+        <header class="w3-container w3-center w3-padding-32"> 
+            <h1><b>Sociology Student Blog</b></h1>
+            <p>Welcome to the blog of <span class="w3-tag">Diana Molzhigit</span></p>
+            <button class="top-right-button w3-button w3-padding-large w3-light-grey" onclick="toggleTheme()">Activate dark mode</button>
+    <script>
+        function darkmode() {
+          document.body.classList.toggle("dark-mode");
+        }
+    </script>
+        </header>
+
+        <!-- Navigation -->
+        <!-- Navigation -->
+  <nav class="navigation w3-bar w3-light-grey w3-margin-bottom">
+    <a href="MyBlog.html" class="w3-bar-item w3-button">About me</a>
+    <a href="Sociology_market.html" class="w3-bar-item w3-button">Sociology</a>
+    <a href="group-academics.html" class="w3-bar-item w3-button">Academics</a>
+    <a href="group-research.html" class="w3-bar-item w3-button">Research</a>
+    <a href="group-hobbies.html" class="w3-bar-item w3-button">Hobbies and More</a>
+    <a href="Expeditions.html" class="w3-bar-item w3-button">Expedition</a>
+</nav>
+    <!-- Hobby Section -->
+        <div class="container">
+            <header class="header">
+                <h2>My Hobbies</h2>
+                <h4>I have mainly two hobbies: learning Chinese and dancing. On this page, I am suggesting some recommendations based on my interests.</h4>
+                <div class="info"></div>
+                <h3><u>What is your hobby?</u></h3>
+                <input type="text" class="hobby-input" placeholder="Enter your hobby">
+                <button class="button" onclick="findHobby()">Submit</button>
+                <div class="result-message"></div>
+            </header>
+        </div>
+    </div>
+<footer class="w3-container w3-light-blue w3-padding-32 w3-margin-top">
+    <a href="MyBlog.html" class="w3-button w3-black w3-padding-large w3-margin-bottom">Main Page</a>
+    <a href="group-research.html" class="w3-button w3-black w3-padding-large w3-margin-bottom">Recommended research »</a>
+    <p>&copy; 2024, Diana Molzhigit. All Rights Reserved.</p>
+</footer>
+<script src="recom.js"></script>
+<script>
+    function findHobby() {
+        const userInput = document.querySelector(".hobby-input").value.toLowerCase();
+        const resultMessage = document.querySelector(".result-message");
+        resultMessage.innerHTML = "";  
+        
+        let i = 0;
+        let found = false;
+        let matches = [];
+
+        while (i < recommended_literature_2.length) {
+            const hobby = recommended_literature_2[i];
+            if (hobby.title.toLowerCase().includes(userInput)) {
+                matches.push(hobby);
+                found = true;
+            }
+            i++;
+        }
+
+        if (found) {
+            resultMessage.innerHTML = "<p>You can explore these:</p>";
+            matches.forEach(match => {
+                let matchInfo = document.createElement("p");
+                matchInfo.innerHTML = `<strong>${match.title}</strong> by ${match.by}, ${match.type}, Fee: ${match.Fee}. Description: ${match.description}`;
+                resultMessage.appendChild(matchInfo);
+            });
+            // Use getElementsByTagName to style or manipulate all result paragraphs
+            const paragraphs = resultMessage.getElementsByTagName("p");
+            for (let paragraph of paragraphs) {
+                paragraph.style.color = "blue";
+                paragraph.style.fontWeight = "bold";
+            }
+        } else {
+            resultMessage.innerHTML = "<p>It looks like we don't have any info about it yet, but we will consider adding more info about it!</p>";
+            // Style the fallback paragraph using getElementsByTagName
+            const paragraphs = resultMessage.getElementsByTagName("p");
+            if (paragraphs.length > 0) {
+                paragraphs[0].style.color = "red";
+                paragraphs[0].style.fontWeight = "bold";
+            }
+        }
+    }
+    
+    let currentTheme = "light"; // Initialize the theme as "light"
+
+    function toggleTheme() {
+        const body = document.body;
+
+        switch (currentTheme) {
+            case "light":
+                body.classList.add("dark-mode");
+                currentTheme = "dark";
+                console.log("Switched to dark mode");
+                break;
+            case "dark":
+                body.classList.remove("dark-mode");
+                currentTheme = "light";
+                console.log("Switched to light mode");
+                break;
+            default:
+                console.warn("Unknown theme, resetting to light");
+                body.classList.remove("dark-mode");
+                currentTheme = "light";
+        }
+    }
+</script>
+</body>
+</html>

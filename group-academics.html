@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Academic Sources</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link type="text/css" rel="stylesheet" href="selector-recom.css">
+</head>
+<body class="w3-gainsboro">
+
+<div class="w3-content" style="max-width:1400px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-32"> 
+    <h1><b>Sociology Student Blog</b></h1>
+    <p>Welcome to the blog of <span class="w3-tag">Diana Molzhigit</span></p>
+    <button class="top-right-button w3-button w3-padding-large w3-light-grey" onclick="darkmode()">Activate dark mode</button>
+    <script>
+        function darkmode() {
+          document.body.classList.toggle("dark-mode");
+        }
+    </script>
+  </header>
+  <nav class="navigation w3-bar w3-light-grey w3-margin-bottom">
+    <a href="MyBlog.html" class="w3-bar-item w3-button">About me</a>
+    <a href="Sociology_market.html" class="w3-bar-item w3-button">Sociology</a>
+    <a href="group-academics.html" class="w3-bar-item w3-button">Academics</a>
+    <a href="group-research.html" class="w3-bar-item w3-button">Research</a>
+    <a href="group-hobbies.html" class="w3-bar-item w3-button">Hobbies and More</a>
+    <a href="Expeditions.html" class="w3-bar-item w3-button">Expedition</a>
+</nav>
+  <!-- Recommended Sources Section -->
+  <div class="w3-card w3-margin w3-white">
+    <div class="w3-container">
+      <h2>Academic Sources I Recommend</h2>
+      <h4>If you've been wanting to get to know more about the Social Sciences, check out the sources below:</h4>
+      <div id="info"></div>
+    </div>
+  </div>
+</div>
+<!-- Navigation -->
+
+<footer class="w3-container w3-light-blue w3-padding-32 w3-margin-top">
+    <a href="MyBlog.html" class="w3-button w3-black w3-padding-large w3-margin-bottom">Main Page</a>
+    <a href="group-research.html" class="w3-button w3-black w3-padding-large w3-margin-bottom">Recommended research »</a>
+    <p>&copy; 2024, Diana Molzhigit. All Rights Reserved.</p>
+</footer>
+<script src="recom.js"></script>
+<script>
+    function displayResources() {
+    // function scope variable info accessed only in displayResources
+    let info = document.getElementById("info");
+    recommended_literature_1.forEach(resource => { //block scope variable 
+      let resourceItem = document.createElement("div");
+      resourceItem.classList.add("resource-item");
+      //Each let variable within the callback function is only accessible within that specific loop iteration 
+      let resourceInfo = document.createElement("p");
+      resourceInfo.innerHTML = `<strong>${resource.title}</strong> by ${resource.by} <br> Type: ${resource.type} <br> Fee: ${resource.Fee} <br> Description: ${resource.description}`;
+      
+      let button = document.createElement("button");
+      button.innerHTML = "Link to the source";
+      button.classList.add("btn-primary");
+      button.onclick = function() {
+        window.open(resource.link, "_blank");
+      };
+      
+      resourceItem.appendChild(resourceInfo);
+      resourceItem.appendChild(button);
+      info.appendChild(resourceItem);
+    });
+  }
+  
+  displayResources();
+</script>
+</body>
+</html>

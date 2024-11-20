@@ -1,0 +1,95 @@
+body, h1, h2, h3, h4, h5 {font-family: "Raleway", sans-serif}
+.w3-tag {background-color: #461818d4; padding: 5px; }
+.w3-light-grey{background-color: gainsboro;} 
+a {color: rgba(0, 0, 255, 0.642);}
+a:hover {color: purple;}
+a:visited {color: purple;}
+
+
+/* Decorative element before the header text */
+h1::before {
+    content: "✏️ ";
+    margin-right: 8px;
+  }
+/* Decorative styling for social media links */
+a[href*="instagram.com"]::after {
+    content: " ↗";
+    color: rgba(0, 0, 255, 0.642);
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 28px; /* Adjust heading size for small screens */
+  }
+
+  .container {
+      padding: 15px; /* Reduce padding on smaller screens */
+      margin: 20px auto; /* Less top margin for mobile */
+  }
+
+  .content {
+    font-size: 16px; /* Adjust font size for readability */
+    line-height: 1.4;
+  }
+
+  .date {
+    padding: 15px 10px; /* Reduce padding for mobile */
+    font-size: 14px; /* Smaller footer text */
+  }
+  .w3-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+/* General dark mode background and text color */
+.dark-mode, 
+.dark-mode .container, 
+.dark-mode .w3-container, 
+.dark-mode .footer {
+  background-color: #333333 !important; /* Dark gray background */
+  color: beige !important; /* Light text */
+}
+
+/* Dark mode: main background and text color */
+.dark-mode {
+  background-color: black !important; /* Main background set to black */
+  color: beige !important; /* Text color for general readability */
+}
+
+/* Additional styling for elements in dark mode */
+.dark-mode .container, 
+.dark-mode .w3-container, 
+.dark-mode .footer, 
+.dark-mode .w3-light-grey, 
+.dark-mode .w3-white {
+  background-color: black !important; /* Uniform black background */
+  color: beige !important; /* Uniform light text */
+}
+
+/* Links in dark mode */
+.dark-mode a {
+  color: #80d0ff !important; /* Light blue links */
+}
+
+.dark-mode a:hover {
+  color: #ffcc66 !important; /* Highlight color for hover */
+}
+
+/* Adjust images in dark mode, if necessary */
+.dark-mode .post-image {
+  opacity: 0.9; /* Optional: Slightly dim images for dark mode */
+}
+
+.dark-mode .w3-hoverable:hover {
+  background-color:#80d0ff;
+  color: black !important;
+}
+
+/* Button styling in dark mode */
+.top-right-button {
+  position: absolute;
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  z-index: 10; /* Ensures it stays on top of other elements */
+}

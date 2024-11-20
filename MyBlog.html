@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Blog</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link type="text/css" rel="stylesheet" href="selector.css">
+</head>
+<body class="w3-gainsboro">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Sociology Student Blog</b></h1>
+  <p>Welcome to the blog of <span class="w3-tag">Diana Molzhigit</span></p>
+  <button class="top-right-button w3-button w3-padding-large w3-light-grey" onclick="darkmode()">Activate dark mode</button>
+  <script>
+      function darkmode() {
+      var element = document.body
+      element.classList.toggle("dark-mode");
+  }
+  </script>
+</header>
+
+<nav class="navigation w3-bar w3-light-grey w3-margin-bottom">
+  <a href="Sociology_market.html" class="w3-bar-item w3-button w3-light-grey">Sociology</a>
+  <a href="group-academics.html" class="w3-bar-item w3-button w3-light-grey">Academics</a>
+  <a href="group-research.html" class="w3-bar-item w3-button w3-light-grey">Research</a>
+  <a href="group-hobbies.html" class="w3-bar-item w3-button w3-light-grey">Hobbies and More</a>
+  <a href="Expeditions.html" class="w3-bar-item w3-button w3-light-grey">Expedition</a>
+</nav>
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="sociology_market.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Sociology in Kazakhstan</b></h3>
+      <h5>The job market in Kazakhstan <span class="w3-opacity">August 17, 2014</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Sociology is quite fun discipline just entering Kazakhstani higher education and market. There are not many jobs for pure sociologists. A lot of such works can be occupied by people who do not have sociology education, but perhaps just humanitarian education or relative experience. This makes the job search hard and other skills very important. 
+      </p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><a href="Sociology_market.html"><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="Nature_arch1.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Archaeological expeditions</b></h3>
+      <h5>Two fieldtrips I have gone to as a student <span class="w3-opacity">September 16, 2014</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Two expeditions were completely different both in nature and its practices. The first expedition was purely archaeological. I was living in Bayan-Zhurek valley, the mountainous area near Taldykorgan city, South-East Kazakhstan, for the archaeological summer school DMAP.
+        The second expedition was a mix of archaeological and socio-cultural fieldtrip with elements of interview, and other interesting archaeological methods that I did not practice in the first.
+      </p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><a href="Expeditions.html"><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button> </a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">3</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card, name -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="author_ava.jpg" style="width:100%" >
+    <div class="w3-container w3-white">
+      <h4><b>Diana Molzhigit Guldarkhanqyzy</b></h4>
+      <p>I am a student, crocheter, sister, sociologist, anthropologist, passionate and playful human-being aspiring to be a fashion designer. 
+        Subscribe to my social media! <a href="https://www.instagram.com/p/CwSJk2JMIAm/?img_index=1">Instagram</a>
+      </p>
+    </div>
+  </div><hr>
+  
+  <!-- Popular Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Other Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">  
+        <img src="Nature_arch2.jpg" alt="Nature" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Far from shower and internet</span><br>
+        <span>How was it to live in the mountains without city comfort?</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="hobbie_hoodie.jpg" alt="Hoodie" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Upcycling</span><br>
+        <span>My hobby where I work with used and second-hand clothes.</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="hobbie_crochettoy.jpg" alt="mushroom_toy" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Crocheting everyday</span><br>
+        <span>On lessons, when eating, when watching movies, everywhere and always. Crochet and knitting are an addiction. </span>
+      </li>   
+      <!-- -------------------------------------------------------------- crop the images later? -->
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="Karlag_ortau.jpg" alt="Karlag" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Exploring Karlag sites in Kazakhstan</span><br>
+        <span>The filedtrip took place in May, 2024 where we visited three Karlag sites.</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">Hobby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Crochet</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Dancing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Kazakhstan</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Job</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Fieldwork</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">StudentLife</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sustainability</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Research</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Meditation</span>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Recommended »</button>
+  <p>&copy; 2024, Diana Molzhigit. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

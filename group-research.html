@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research at NU (group)</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+    <style>
+        body, h1, h2, h3, h4, h5 { font-family: "Raleway", sans-serif; }
+        .w3-tag { background-color: #461818d4; padding: 5px; }
+        .w3-light-grey { background-color: gainsboro; }
+        .container { max-width: 1400px; margin: auto; padding: 20px; }
+        .navigation .w3-button { margin: 0 5px; }
+        .resource-item { margin: 20px 0; }
+        .btn-primary { font-size: 16px; color: white; background-color: lightgreen; padding: 10px 20px; border: 2px solid darkgreen; }
+        .dark-mode { background-color: black; color: beige; }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+<div class="container">
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-32"> 
+        <h1><b>Sociology Student Blog</b></h1>
+        <p>Welcome to the blog of <span class="w3-tag">Diana Molzhigit</span></p>
+        <button class="w3-button w3-light-grey" onclick="darkmode()">Activate dark mode</button>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation w3-bar w3-light-grey w3-margin-bottom">
+        <a href="MyBlog.html" class="w3-bar-item w3-button">About me</a>
+        <a href="Sociology_market.html" class="w3-bar-item w3-button">Sociology</a>
+        <a href="group-academics.html" class="w3-bar-item w3-button">Academics</a>
+        <a href="group-research.html" class="w3-bar-item w3-button">Research</a>
+        <a href="group-hobbies.html" class="w3-bar-item w3-button">Hobbies and More</a>
+        <a href="Expeditions.html" class="w3-bar-item w3-button">Expedition</a>
+    </nav>
+
+    <!-- Question Section -->
+    <div class="w3-card w3-margin w3-white">
+        <div class="w3-container centered-section">
+            <h2>Social Science Recommendations</h2>
+            <div class="question">Do you have a research paper already?</div>
+            <button class="btn btn-primary" id="yesButton">Yes</button>
+            <button class="btn btn-primary" id="noButton">No</button>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div id="resultText" class="w3-container w3-padding-16 w3-center"></div>
+    <ul id="rl-1" class="w3-ul w3-border"></ul>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-light-blue w3-padding-32 w3-margin-top">
+        <a href="MyBlog.html" class="w3-button w3-black w3-padding-large w3-margin-bottom">Main Page</a>
+        <a href="group-academics.html" class="w3-button w3-black w3-padding-large w3-margin-bottom">Academic Recommendations »</a>
+        <p>&copy; 2024, Diana Molzhigit. All Rights Reserved.</p>
+    </footer>
+</div>
+
+<script>
+    const researchResources = {
+        yes: [
+            { title: "NU Alumni Mentorship Program", by: "Career and Advising Center", description: "An ecosystem encouraging student research and innovation initiatives with access to valuable advice and professional networks.", type: "Mentorship" },
+            { title: "2024 AUA Academic Conference", by: "Chulalongkorn University", description: "Apply for the conference at Chulalongkorn University with paid expenses, as NU is a member of Asian Universities Alliance.", type: "Conference" },
+            { title: "Student Mobility", by: "Nazarbayev University", description: "An academic, research, or cultural experience at the Host Institution for up to one academic year.", type: "Mobility" },
+            { title: "Student Research Database", by: "Nazarbayev University", description: "Explore NU's research and contact faculty for assistantship opportunities.", type: "Database" }
+        ],
+        no: [
+            { title: "NU Research Database", by: "Nazarbayev University", description: "Explore NU's research and contact faculty for assistantship opportunities.", type: "Database" },
+            { title: "Journals in Gender Studies", by: "McGill University", description: "A list of journals in Gender, Sexuality, and Feminist Studies.", type: "Journal" },
+            { title: "Community Research Opportunities", by: "Local NGOs", description: "Participate in community-based research initiatives.", type: "Research" }
+        ]
+    };
+
+    document.getElementById('yesButton').addEventListener('click', () => showOptions('yes'));
+    document.getElementById('noButton').addEventListener('click', () => showOptions('no'));
+
+    function showOptions(answer) {
+        const resultText = document.getElementById("resultText");
+        const rl1 = document.getElementById("rl-1");
+
+        let resources = answer === 'yes' ? researchResources.yes : researchResources.no;
+        resultText.innerHTML = answer === 'yes' ? "Then you can improve and promote it here:" : "Then these sources might be useful for you:";
+
+        rl1.innerHTML = ''; // Clear previous items
+
+        let count = 0; // Counter to limit the number of items displayed
+        for (let item of resources) {
+            // Skip databases when the answer is 'yes'
+            if (answer === 'yes' && item.type === "Database") {
+                continue;
+            }
+
+            rl1.innerHTML += `<li><b>${item.title}</b> by ${item.by} - ${item.description}</li>`;
+            count++;
+
+            // Limit displayed items to 3
+            if (count >= 3) {
+                break;
+            }
+        }
+    }
+
+    // Using querySelectorAll to style all buttons
+    const buttons = document.querySelectorAll('.btn-primary');
+    buttons.forEach(button => {
+        button.style.backgroundColor = 'lightgreen';
+        button.style.border = '2px solid darkgreen';
+
+        // Add hover effect
+        button.addEventListener('mouseover', () => button.style.backgroundColor = 'darkgreen');
+        button.addEventListener('mouseout', () => button.style.backgroundColor = 'lightgreen');
+    });
+</script>
+</body>
+</html>
